@@ -14,3 +14,7 @@ Read the tests to understand how the application should behave.
 `npm test`
 
 **Used to run the unit tests**
+
+### Note
+
+Each update in the master branch of this repository will trigger a pipeline on gocd
