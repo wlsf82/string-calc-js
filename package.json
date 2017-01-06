@@ -4,12 +4,16 @@
   "description": "JS sample program that does calculations with numbers as strings",
   "main": "stringCalc.js",
   "scripts": {
-    "test": "./node_modules/.bin/mocha stringCalc.test.js"
+    "test": "./node_modules/.bin/mocha stringCalc.test.js",
+    "webdriver:update": "./node_modules/.bin/webdriver-manager update",
+    "test:e2e": "./node_modules/.bin/protractor e2e/protractor.conf.js"
   },
   "author": "Walmyr Filho (wlsf82@gmail.com)",
   "license": "UNLICENSED",
   "devDependencies": {
     "mocha": "^3.2.0",
+    "protractor": "^4.0.14",
+    "shortid": "^2.2.6",
     "unit.js": "^2.0.0"
   }
 }
