@@ -4,6 +4,7 @@ const browserstack = require("browserstack-local");
 const browserstackLocal = new browserstack.Local();
 
 module.exports.config = {
+    directConnect: false,
     seleniumAddress: "http://hub.browserstack.com/wd/hub",
     baseUrl: "http://appear.in/",
 
@@ -29,6 +30,11 @@ module.exports.config = {
         "name": "Hands on workshop"
     },
 
+    onPrepare() {
+        browser.driver.manage().window().maximize();
+        browser.ignoreSynchronization = true;
+    },
+
     beforeLaunch() {
         return new Promise((resolve, reject) => {
             const browserstackLocalArgs = {
@@ -44,11 +50,6 @@ module.exports.config = {
                 resolve();
             });
         });
-    },
-
-    onPrepare() {
-        browser.driver.manage().window().maximize();
-        browser.ignoreSynchronization = true;
     },
 
     onComplete() {
