@@ -5,6 +5,7 @@ const shortid = require("shortid");
 describe("appear.in hands on e2e tests on gocd", () => {
     beforeEach(() => {
         const randomRoomName = shortid.generate();
+
         browser.get(randomRoomName);
         waitABit();
     });
