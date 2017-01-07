@@ -1,7 +1,6 @@
 "use strict";
 
 const browserstack = require("browserstack-local");
-const SpecReporter = require("jasmine-spec-reporter");
 const browserstackLocal = new browserstack.Local();
 
 module.exports.config = {
@@ -48,15 +47,7 @@ module.exports.config = {
     },
 
     onPrepare() {
-        jasmine.getEnv().addReporter(new SpecReporter({
-            displayFailuresSummary: true,
-            displayFailedSpec: true,
-            displaySuiteNumber: true,
-            displaySpecDuration: true
-        }));
-
         browser.driver.manage().window().maximize();
-
         browser.ignoreSynchronization = true;
     },
 
