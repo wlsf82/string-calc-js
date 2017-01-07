@@ -6,7 +6,7 @@ describe("appear.in hands on e2e tests on gocd", () => {
     beforeEach(() => {
         const randomRoomName = shortid.generate();
         browser.get(randomRoomName);
-        browser.sleep(2000);
+        waitABit();
     });
 
     it("should show the text you sent on chat when you say hello through it", () => {
@@ -18,7 +18,7 @@ describe("appear.in hands on e2e tests on gocd", () => {
         openChatButton.click();
         chatField.sendKeys(text);
         chatField.sendKeys(protractor.Key.ENTER);
-        browser.sleep(2000);
+        waitABit();
 
         expect(chatMessages.getText()).toContain(text);
     });
@@ -30,10 +30,14 @@ describe("appear.in hands on e2e tests on gocd", () => {
         const rate = element(by.css(".questionnaire"));
 
         leaveButton.click();
-        browser.sleep(2000);
+        waitABit();
 
         expect(thankYouMessage.isDisplayed()).toBe(true);
         expect(returnToRoomLink.isDisplayed()).toBe(true);
         expect(rate.isDisplayed()).toBe(true);
     });
 });
+
+function waitABit() {
+    browser.sleep(2000);
+}
