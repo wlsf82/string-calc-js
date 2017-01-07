@@ -6,6 +6,7 @@ describe("appear.in hands on e2e tests on gocd", () => {
     beforeEach(() => {
         const randomRoomName = shortid.generate();
         browser.get(randomRoomName);
+        browser.sleep(2000);
     });
 
     it("should show the text you sent on chat when you say hello through it", () => {
@@ -16,7 +17,7 @@ describe("appear.in hands on e2e tests on gocd", () => {
 
         openChatButton.click();
         chatField.sendKeys(text);
-        hatField.sendKeys(protractor.Key.ENTER);
+        chatField.sendKeys(protractor.Key.ENTER);
         browser.sleep(2000);
 
         expect(chatMessages.getText()).toContain(text);
