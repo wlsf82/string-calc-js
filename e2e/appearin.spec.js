@@ -37,6 +37,16 @@ describe("appear.in hands on e2e tests on gocd", () => {
         expect(returnToRoomLink.isDisplayed()).toBe(true);
         expect(rate.isDisplayed()).toBe(true);
     });
+
+    it("should open camera and microphone configuration", () => {
+        const camMicButton = element(by.css('div[ng-click="openMediaSelectorModal()"]'));
+        const cameraAndMicModal = element(by.css(".camera-preview-wrapper"));
+
+        camMicButton.click();
+        waitABit();
+
+        expect(cameraAndMicModal.isDisplayed()).toBe(true);
+    });
 });
 
 function waitABit() {
