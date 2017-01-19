@@ -6,7 +6,7 @@
   "scripts": {
     "test": "./node_modules/.bin/mocha stringCalc.test.js",
     "webdriver:update": "./node_modules/.bin/webdriver-manager update",
-    "test:e2e": "./node_modules/.bin/protractor e2e/protractor.conf.js"
+    "test:e2e": "xvfb-run ./node_modules/.bin/protractor e2e/protractor.conf.js"
   },
   "author": "Walmyr Filho (wlsf82@gmail.com)",
   "license": "UNLICENSED",

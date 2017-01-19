@@ -2,7 +2,7 @@
 
 class Helper {
     waitABit() {
-        browser.sleep(2000);
+        browser.sleep(3000);
     }
 }
 
