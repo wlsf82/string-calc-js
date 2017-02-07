@@ -10,6 +10,7 @@
   "license": "UNLICENSED",
   "devDependencies": {
     "mocha": "^3.2.0",
+    "n": "^2.1.4",
     "unit.js": "^2.0.0"
   }
 }
